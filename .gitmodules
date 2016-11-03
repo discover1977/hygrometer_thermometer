@@ -1,0 +1,3 @@
+[submodule "ws2812b"]
+	path = ws2812b
+	url = https://github.com/discover1977/ws2812b_lib.git
