@@ -12,10 +12,10 @@
 #define OK_I2C_ACK 1
 
 #ifndef SDA
-#define I2COUT      PORTB	// Write to Port
-#define I2CIN       PINB	// Read from Port
-#define I2CDIR      DDRB	// Set Port Direction
-#define I2CSEL      PORTB	// Alternative Port Functions
+#define I2COUT      PORTD	// Write to Port
+#define I2CIN       PIND	// Read from Port
+#define I2CDIR      DDRD	// Set Port Direction
+#define I2CSEL      PORTD	// Alternative Port Functions
 
 #define SCL       	0b00000001		// Serial Clock Line
 #define SDA       	0b00000010		// Serial Data Line
