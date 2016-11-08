@@ -7,7 +7,7 @@
 
 #include <avr/io.h>
 #include <util/delay.h>
-
+#include <stdio.h>
 #include "bits_macros.h"
 #include "i2c-soft.h"
 #include "ssd1306.h"
@@ -18,6 +18,8 @@
 int main() {
 
 	char Text[40];
+
+	for( int i = 0; i < 40; i++) Text[i] = 0;
 
 	SetBit(DDRC, 1);
 	ClearBit(PORTC, 1);
@@ -30,14 +32,17 @@ int main() {
 
 	WS2812Init();
 
-	LCD_Goto(0, 0);
-	LCD_Printf("Привет", 0);
-
 	while(1) {
 		_delay_ms(100);
-		sprintf(Text, "%d %d", (int)HTUreadTemp(), (int)HTUreadHumidity());
-		LCD_Goto(0, 1);
-		LCD_Printf(Text, 0);
+
+		sprintf(Text, "%.1f", HTUreadTemp());
+		LCD_Goto(5, 0);
+		LCD_Printf(Text, 2);
+
+		sprintf(Text, "%.1f", HTUreadHumidity());
+		LCD_Goto(5, 4);
+		LCD_Printf(Text, 2);
+
 	}
 	return 0;
 }

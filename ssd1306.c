@@ -712,7 +712,7 @@ void LCD_CharBig(unsigned int c)
 	}
 }
 
-void LCD_Printf(unsigned char* buf, unsigned char size) //выводим строку из буфера
+void LCD_Printf(char* buf, unsigned char size) //выводим строку из буфера
 {
 	while (*buf != 0) {
 		if(size == 0) {

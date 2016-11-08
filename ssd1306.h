@@ -64,18 +64,18 @@
 #define COMAND		                        0x00
 #define DATA		                        0x40
 
-void LCD_init(void);  //î¡·á¬¼î¡¿ é®¨í½¦í±«é¨ í½§í½ å©±ğ¬¥
-void LCD_Commmand(unsigned char ControByte, unsigned char DataByte); //ë¯¬á®¤ å©±ğ¬¥ é¬¨ å¡­î¼¥
-void LCD_Goto(unsigned char x, unsigned char y);    //í²‹í³ î¯¢é³¼ ë¯®ñ¥©­á³»
-void LCD_Goto2X(unsigned char x, unsigned char y); //í²‹í³ î¯¢é³¼ ë¯®ñ¥©­á³» í±¶í¾®ç¦­ã¡­í¹í¾²
-void LCD_Clear(void);  //ï¸¨ò³«  ã²¥ä¬ å©±ğ¬¥
-void LCD_Contrast(char set_contrast); //î¡±ó±¯©ë ë¯­ó±¡±ó¡®ğ® å¬ 255
-void LCD_BigNum(unsigned char num);  //ã¼¢ï¢ â¯«é³ í½§íµ°
-void LCD_Char(unsigned int c);  //ã¼¢ï¢ ò©­¢ï¬ 
-void LCD_CharBig(unsigned int c); // ã¼¢ï¢ ë±³ğ®»ó¡²¨ì¯¢
-void LCD_Printf(unsigned char* buf, unsigned char size); //ğ¦·á³ æ° ò³±®ë± í‡í± è­¥ñ¡­¨ - 0 ò¡­»ç¡¬æ¬ªé§ 2 - í±í¶«é¸¨î¼© - 3 ò¡­»ç¡¡ï¬¼ï§¨ó¯¬¼ë¬ å¬¿ í½§íµ°)
-void LCD_DrawImage(unsigned char num_image); //ã¼¢ï¥¨ğ¡« ñ³©­ë± é¥ íµ²í¶¸
-void LCD_Bat(unsigned char y,unsigned char x, unsigned char z);   //ñ©²³æ° â¡²á±¥ê«³ ğ¬ ë¯®ñ¥©­á³ êŸº - ï° 0 å¬ 10 å¦«æ®¨ç‹Švoid LCD_Mode(char set_mode); //1 - inverted / 0 - normal
+void LCD_init(void);
+void LCD_Commmand(unsigned char ControByte, unsigned char DataByte);
+void LCD_Goto(unsigned char x, unsigned char y);
+void LCD_Goto2X(unsigned char x, unsigned char y);
+void LCD_Clear(void);
+void LCD_Contrast(char set_contrast);
+void LCD_BigNum(unsigned char num);
+void LCD_Char(unsigned int c);
+void LCD_CharBig(unsigned int c);
+void LCD_Printf( char* buf, unsigned char size);
+void LCD_DrawImage(unsigned char num_image);
+void LCD_Bat(unsigned char y,unsigned char x, unsigned char z);
 void LCD_Sleep(char set);   //1 - on sleep / 0 - off sleep
 void LCD_Mode(unsigned char set_mode);
 

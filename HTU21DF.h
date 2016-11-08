@@ -38,14 +38,22 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 #include "i2c-soft.h"
 
-#define HTU_WR_ADDR 0x80 // write address for temp/humidity sensor 
+#define HTU_WR_ADDR 0x80 // write address for temp/humidity sensor
 #define HTU_RD_ADDR 0x81 // read address for temp/humidity sensor
-#define HTU_TEMP_CMD 0xE3 // command to trigger temperature reading 
-#define HTU_HUMI_CMD 0xE5 // command to trigger humidity reading
+
+#define HTU_TEMP_MEAS_HOLD_MASTER	0xE3
+#define HTU_HUM_MEAS_HOLD_MASTER	0xE5
+#define HTU_TEMP_MEAS_noHOLD_MASTER	0xF3
+#define HTU_HUM_MEAS_noHOLD_MASTER	0xF5
+#define HTU_WRITE_USER_REGISTER		0xE6
+#define HTU_READ_USER_REGISTER		0xE7
+#define HTU_SOFT_RESET				0xFE
+
+#define RET_TYPE	float
 
 // Available Functions:
-float HTUreadTemp(); // Get a temperature reading
-float HTUreadHumidity(); // Get a humidity reading
+RET_TYPE HTUreadTemp(); // Get a temperature reading
+RET_TYPE HTUreadHumidity(); // Get a humidity reading
 void HTUReset(); // Soft reset of sensor 
 
 #endif // HTU21DF_H

@@ -12,10 +12,10 @@
 #define OK_I2C_ACK 1
 
 #ifndef SDA
-#define I2COUT      PORTD	// Write to Port
-#define I2CIN       PIND	// Read from Port
-#define I2CDIR      DDRD	// Set Port Direction
-#define I2CSEL      PORTD	// Alternative Port Functions
+#define I2COUT      PORTC	// Write to Port
+#define I2CIN       PINC	// Read from Port
+#define I2CDIR      DDRC	// Set Port Direction
+#define I2CSEL      PORTC	// Alternative Port Functions
 
 #define SCL       	0b00000001		// Serial Clock Line
 #define SDA       	0b00000010		// Serial Data Line
@@ -32,7 +32,6 @@ void i2c_Soft_Stop();
 unsigned int i2c_Soft_Write(unsigned int a);
 // Read Transfer
 unsigned int i2c_Soft_Read(unsigned int ack);
-
 // Read Byte
 unsigned int i2c_Soft_ReadByte(unsigned int nAddress, unsigned int nRegister);
 // Write Byte
