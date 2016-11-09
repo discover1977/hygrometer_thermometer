@@ -15,7 +15,6 @@
 #define I2COUT      PORTC	// Write to Port
 #define I2CIN       PINC	// Read from Port
 #define I2CDIR      DDRC	// Set Port Direction
-#define I2CSEL      PORTC	// Alternative Port Functions
 
 #define SCL       	0b00000001		// Serial Clock Line
 #define SDA       	0b00000010		// Serial Data Line

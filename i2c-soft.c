@@ -43,12 +43,14 @@ static void SetHighSDA()
 
 static void SetLowSCL()
 {
-	I2COUT &= ~SCL;
+	//I2COUT &= ~SCL;
+	I2CDIR |= SCL;
 	I2CWAIT
 }
 static void SetHighSCL()
 {
-	I2COUT |= SCL;
+	//I2COUT |= SCL;
+	I2CDIR &= ~SCL;
 	I2CWAIT
 }
 
@@ -57,13 +59,11 @@ static void SetHighSCL()
 //------------------------------------------------------------------
 void i2c_Soft_Init()
 {
-	I2CSEL &= ~SDA;
-	I2CSEL &= ~SCL;
-
 	I2COUT &= ~SCL;
 	I2COUT &= ~SDA;
 
-	I2CDIR |= SCL;
+	//I2CDIR |= SCL;
+	I2CDIR &= ~SCL;
 	I2CDIR &= ~SDA;
 
 	SetHighSCL();
@@ -153,7 +153,6 @@ unsigned int i2c_Soft_Read(unsigned int ack)
 		SetHighSCL();
 		if (I2CIN & SDA)
 			caracter = caracter  + 1;
-        
 		SetLowSCL();
 	}
 

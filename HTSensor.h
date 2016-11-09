@@ -48,12 +48,14 @@ OTHER DEALINGS IN THE SOFTWARE.
 #define HTU_WRITE_USER_REGISTER		0xE6
 #define HTU_READ_USER_REGISTER		0xE7
 #define HTU_SOFT_RESET				0xFE
+#define HTU21D_TEMP_COEFFICIENT		-0.15
 
 #define RET_TYPE	float
 
 // Available Functions:
-RET_TYPE HTUreadTemp(); // Get a temperature reading
-RET_TYPE HTUreadHumidity(); // Get a humidity reading
-void HTUReset(); // Soft reset of sensor 
+RET_TYPE HTSensorReadTemp(); // Get a temperature reading
+RET_TYPE HTSensorReadHumidity(); // Get a humidity reading
+float HTSensorReadCompensatedHumidity(void);
+void HTSensorReset(); // Soft reset of sensor 
 
 #endif // HTU21DF_H
