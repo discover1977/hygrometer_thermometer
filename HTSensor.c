@@ -84,3 +84,4 @@ float HTSensorReadCompensatedHumidity(void)
 }
 
 // TODO Сделать чтение в режиме блокировки
+// TODO CRC
