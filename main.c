@@ -48,6 +48,8 @@ int main() {
 
 	WS2812Init();
 
+	HTSensorHeat(50);
+
 	while(1) {
 
 		_delay_ms(100);

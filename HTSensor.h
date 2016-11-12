@@ -41,21 +41,23 @@ OTHER DEALINGS IN THE SOFTWARE.
 #define HTU_WR_ADDR 0x80 // write address for temp/humidity sensor
 #define HTU_RD_ADDR 0x81 // read address for temp/humidity sensor
 
-#define HTU_TEMP_MEAS_HOLD_MASTER	0xE3
-#define HTU_HUM_MEAS_HOLD_MASTER	0xE5
-#define HTU_TEMP_MEAS_noHOLD_MASTER	0xF3
-#define HTU_HUM_MEAS_noHOLD_MASTER	0xF5
-#define HTU_WRITE_USER_REGISTER		0xE6
-#define HTU_READ_USER_REGISTER		0xE7
-#define HTU_SOFT_RESET				0xFE
-#define HTU21D_TEMP_COEFFICIENT		-0.15
+#define HT_TEMP_MEAS_HOLD_MASTER	0xE3
+#define HT_HUM_MEAS_HOLD_MASTER		0xE5
+#define HT_TEMP_MEAS_noHOLD_MASTER	0xF3
+#define HT_HUM_MEAS_noHOLD_MASTER	0xF5
+#define HT_WRITE_USER_REGISTER		0xE6
+#define HT_READ_USER_REGISTER		0xE7
+#define HT_SOFT_RESET				0xFE
+#define HT_TEMP_COEFFICIENT			-0.15
 
 #define RET_TYPE	float
+#define POLYNOMIAL  0x0131
 
 // Available Functions:
 RET_TYPE HTSensorReadTemp(); // Get a temperature reading
 RET_TYPE HTSensorReadHumidity(); // Get a humidity reading
 float HTSensorReadCompensatedHumidity(void);
 void HTSensorReset(); // Soft reset of sensor 
+void HTSensorHeat(unsigned int duration);
 
 #endif // HTU21DF_H
